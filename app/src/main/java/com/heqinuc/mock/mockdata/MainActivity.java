@@ -26,9 +26,9 @@ import static com.heqinuc.mock.mockdata.background.DataServiceGenerator.createOn
 
 public class MainActivity extends AppCompatActivity {
 
-	public static final int DATA_COUNT = 4467;
+	public static final int DATA_COUNT = 6000;
 	public static final int SLEEP_INTERVER = 1;
-	public static final String FILE_NAME = "hunankey4467.data";
+	public static final String FILE_NAME = "tongji6000.data";
 
 	TextView mTxtInfo = null;
 	OnlineDownloadService mService = null;
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
 				int i = 0;
 
-				while ((strLine = reader.readLine()) != null && i <= DATA_COUNT) {
+				while ((strLine = reader.readLine()) != null && i < DATA_COUNT) {
 
 					String[] reqData = strLine.split("\\,");
 
