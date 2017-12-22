@@ -99,15 +99,19 @@ public class DataServiceGenerator {
 			StringBuffer sb = new StringBuffer();
 
 			sb.append("Heqinuc/" + "6.0" + " ( Android ");
-			sb.append(android.os.Build.VERSION.RELEASE);
+			sb.append(Build.VERSION.RELEASE);
 			sb.append("; ");
 			sb.append(model);
 			sb.append("; ");
-			sb.append(android.os.Build.MANUFACTURER);
+			sb.append(Build.MANUFACTURER);
 			sb.append("; ");
-			sb.append(Build.SUPPORTED_ABIS[0]);
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+				sb.append(Build.SUPPORTED_ABIS[0]);
+			} else {
+				sb.append(Build.CPU_ABI);
+			}
 			sb.append("; ) (");
-			sb.append(android.os.Build.FINGERPRINT);
+			sb.append(Build.FINGERPRINT);
 			sb.append(")");
 
 			String result;
